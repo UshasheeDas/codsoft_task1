@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ushashee Das | BCA Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <style>
+    :root {
+      --bg-color: #101820;
+      --accent-color: #f2aa4c;
+      --text-color: #ffffff;
+      --card-bg: #1e2a38;
+      --hover-color: #ffd580;
+      --transition: 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background: #1a1a1a;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: var(--accent-color);
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 500;
+    }
+
+    nav ul li a:hover {
+      color: var(--accent-color);
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      background-color: #16212f;
+    }
+
+    .hero .intro {
+      flex: 1;
+      max-width: 600px;
+      padding: 20px;
+    }
+
+    .hero-img {
+      flex: 1;
+      max-width: 300px;
+      padding: 20px;
+    }
+
+    .hero-img img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    h1, h2 {
+      margin-bottom: 12px;
+      color: var(--accent-color);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 22px;
+      background: var(--accent-color);
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .flip-card {
+      background-color: transparent;
+      width: 120px;
+      height: 120px;
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background: var(--card-bg);
+      box-shadow: 0 0 10px rgba(255,215,128,0.2);
+    }
+
+    .flip-card-back {
+      transform: rotateY(180deg);
+      color: var(--accent-color);
+      font-weight: bold;
+    }
+
+    .skills-list, .tech-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+      justify-items: center;
+    }
+
+    .projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.project-box {
+  flex: 1 1 300px;
+  max-width: 320px;
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(255, 215, 128, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.project-box:hover {
+  transform: translateY(-5px);
+}
+
+.project-box h3 {
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.project-box p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+#academics {
+  margin-top: 40px;
+}
+
+.timeline {
+  position: relative;
+  margin-left: 20px;
+  padding-left: 20px;
+  border-left: 2px solid var(--accent-color);
+}
+
+.timeline-item {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -11px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  border: 2px solid var(--bg-color);
+}
+
+.timeline-content h3 {
+  margin-bottom: 5px;
+  color: var(--hover-color);
+}
+
+.timeline-content p {
+  margin: 0;
+  color: #ccc;
+  font-size: 14px;
+}
+
+
+.language-bar {
+    background-color: #333;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.language-bar span {
+    display: block;
+    background-color: var(--accent-color);
+    padding: 10px;
+    color: #000;
+    border-radius: 20px;
+}
+
+footer {
+    background: #1a1a1a;
+    text-align: center;
+    padding: 25px;
+    font-size: 14px;
+}
+
+.type-glow {
+  color: var(--accent-color);
+  text-shadow: 0 0 5px #f2aa4c80;
+}
+
+.typewrite {
+  display: inline-block;
+  vertical-align: baseline;
+  border-right: 2px solid var(--accent-color);
+  font-weight: bold;
+  font-size: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 2s steps(10, end), blink 0.7s step-end infinite;
+  line-height: 0.8;
+  padding-left: 6px;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 8ch; /* Adjust depending on character count */
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Ushashee Das</div>
+    <nav>
+      <ul>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#languages">Languages</a></li>
+        <li><a href="#technologies">Technologies</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="intro">
+      <h1 class="type-glow">Hello, I'm<span class="typewrite" data-text="Ushashee!"></span></h1>
+      <h2>BCA Student & Developer</h2>
+      <p>Motivated and tech enthusiastic third-year BCA student with a 
+strong foundation in programming and problem-solving. Eager to 
+apply my skills in software development and IT solutions while 
+continuously learning and growing in the field of technology. 
+Looking for opportunities to gain hands-on experience and 
+contribute effectively to innovative projects. I am applying my 
+knowledge to real-world challenges. Committed to adapting to 
+emerging technologies and delivering efficient solutions in a 
+dynamic work environment. 
+Passionate about collaborating in team environments and 
+contributing to impactful software solutions. 
+Driven to build a career in tech by combining academic learning 
+with practical implementation.</p>
+      <a href="asswts/CV-internship.pdf" class="btn" download>Download CV</a>
+    </div>
+    <div class="hero-img">
+      <img src="asswts/Picsart_25-03-21_18-35-46-497.jpg" alt="Ushashee Das">
+      <div style="margin-top: 15px; display: flex; gap: 20px; justify-content: center;">
+    <a href="https://www.linkedin.com/in/ushashee-das-a07998282?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" 
+       target="_blank" 
+       style="color: var(--accent-color); font-size: 26px; text-decoration: none;">
+      <i class="devicon-linkedin-plain"></i>
+      <span style="font-size: 15px; position: relative; top: -4px;">LinkedIn</span>
+    </a>
+    <a href="https://github.com/UshasheeDas/WanderWise-Smart-routes.-Hidden-gems.-Travel-smarter.-" 
+       target="_blank" 
+       style="color: var(--accent-color); font-size: 26px; text-decoration: none;">
+      <i class="devicon-github-original"></i>
+      <span style="font-size: 15px; position: relative; top: -4px;">GitHub</span>
+    </a>
+  </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><i class="devicon-c-plain colored" style="font-size:40px"></i></div><div class="flip-card-back">C</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><i class="devicon-cplusplus-plain colored" style="font-size:40px"></i></div><div class="flip-card-back">C++</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><i class="devicon-html5-plain colored" style="font-size:40px"></i></div><div class="flip-card-back">HTML</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><i class="devicon-css3-plain colored" style="font-size:40px"></i></div><div class="flip-card-back">CSS</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><i class="devicon-java-plain colored" style="font-size:40px"></i></div><div class="flip-card-back">Java</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><i class="devicon-javascript-plain colored" style="font-size:40px"></i></div><div class="flip-card-back">JavaScript</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><i class="devicon-python-plain colored" style="font-size:40px"></i></div><div class="flip-card-back">Python</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><i class="devicon-mysql-plain colored" style="font-size:40px"></i></div><div class="flip-card-back">DBMS</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="asswts/express-js (1).png" style="width: 50px; height: 50px;" /></div><div class="flip-card-back">Express.js</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><i class="devicon-react-plain colored" style="font-size:40px"></i></div><div class="flip-card-back">React.js</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><i class="devicon-nodejs-plain colored" style="font-size:40px"></i></div><div class="flip-card-back">Node.js</div></div></div>
+    </div>
+  </section>
+
+  <section id="technologies">
+    <h2>Technologies Known</h2>
+    <div class="tech-list">
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><i class="devicon-vscode-plain colored" style="font-size:40px"></i></div><div class="flip-card-back">VSCode</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><i class="devicon-mysql-plain colored" style="font-size:40px"></i></div><div class="flip-card-back">MySQL</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><i class="devicon-oracle-original colored" style="font-size:40px"></i></div><div class="flip-card-back">Oracle</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><i class="devicon-mongodb-plain colored" style="font-size:40px"></i></div><div class="flip-card-back">MongoDB</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><img src="asswts/netbeans.png" style="width: 90px; height: 60px;" /></div><div class="flip-card-back">Apache NetBeans</div></div></div>
+      <div class="flip-card"><div class="flip-card-inner"><div class="flip-card-front"><i class="devicon-github-plain colored" style="font-size:40px"></i></div><div class="flip-card-back">GitHub</div></div></div>
+    </div>
+  </section>
+
+  <section id="projects">
+  <h2>Projects</h2>
+  <div class="projects-container">
+    <div class="project-box">
+      <h3>Cat & Dog Classification</h3>
+      <p>A deep learning-based image classification model that accurately distinguishes between cats and dogs using CNNs. Trained on a large dataset with real-time prediction support, showcasing skills in image processing and computer vision.</p>
+    </div>
+
+    <div class="project-box">
+      <h3>Library Management System</h3>
+      <p>A Java-based desktop application built with Apache NetBeans that manages books, members, and issue/return records. Integrated with MySQL for backend operations, it simulates real-world library automation.</p>
+    </div>
+
+    <div class="project-box">
+      <h3>Weather Forecast System</h3>
+      <p>A responsive web app using HTML, CSS, and JavaScript that fetches real-time weather data via an external API. It displays live updates like temperature, wind speed, and humidity based on user location.</p>
+    </div>
+  </div>
+</section>
+
+
+  <section id="academics">
+  <h2>Academics</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>BCA – Institute of Engineering & Management</h3>
+        <p>2023 – 2026 | CGPA: 9.28</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>Class 12 – Lake Town Govt. Sponsored Girls’ High School</h3>
+        <p>2023 | Percentage: 84.2%</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <h3>Class 10 – Bidhannagar Municipal School</h3>
+        <p>2021 | Percentage: 89.6%</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <section id="languages">
+    <h2>Languages</h2>
+    <div class="language-bar"><span style="width: 70%">English – Intermediate Level</span></div>
+    <div class="language-bar"><span style="width: 70%">Hindi – Intermediate Level</span></div>
+    <div class="language-bar"><span style="width: 90%">Bengali – Advanced Level</span></div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: ushashee44@gmail.com</p>
+    <p>Phone: +91 7980829650</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ushashee Das. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const el = document.querySelector(".typewrite");
+    const text = el.getAttribute("data-text");
+    el.textContent = text;
+  });
+</script>
+
+</body>
+</html>
